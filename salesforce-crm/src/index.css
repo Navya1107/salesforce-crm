@@ -1,0 +1,1836 @@
+/* ========================================
+   MIDNIGHT DARK THEME
+======================================== */
+
+:root {
+  color-scheme: dark;
+
+  --midnight-bg: #111827;
+  --midnight-sidebar: #0b1120;
+  --midnight-surface: #1f2937;
+  --midnight-hover: #273449;
+  --midnight-border: #334155;
+
+  --midnight-text: #f1f5f9;
+  --midnight-muted: #94a3b8;
+
+  --midnight-primary: #2563eb;
+  --midnight-accent: #60a5fa;
+
+  --midnight-green: #4ade80;
+  --midnight-red: #f87171;
+  --midnight-orange: #fb923c;
+  --midnight-purple: #c084fc;
+
+  /* Bootstrap theme variables */
+
+  --bs-body-bg: #111827;
+  --bs-body-color: #f1f5f9;
+  --bs-border-color: #334155;
+  --bs-secondary-color: #94a3b8;
+  --bs-secondary-bg: #1f2937;
+  --bs-tertiary-bg: #273449;
+  --bs-heading-color: #f1f5f9;
+}
+
+/* ========================================
+   1. GLOBAL STYLES
+======================================== */
+
+html,
+body,
+#root {
+  min-height: 100%;
+  background-color: var(--midnight-bg);
+  color: var(--midnight-text);
+}
+
+body {
+  font-family: "Inter", Arial, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--midnight-text);
+}
+
+a {
+  color: var(--midnight-accent);
+}
+
+.text-muted,
+.text-secondary {
+  color: var(--midnight-muted) !important;
+}
+
+.text-dark {
+  color: var(--midnight-text) !important;
+}
+
+.bg-white,
+.bg-light {
+  background-color: var(--midnight-surface) !important;
+}
+
+.border {
+  border-color: var(--midnight-border) !important;
+}
+
+hr {
+  border-color: var(--midnight-border);
+}
+
+/* ========================================
+   2. MAIN LAYOUT
+======================================== */
+
+.main-layout,
+.main-content,
+.dashboard-layout,
+.dashboard-main,
+.crm-page,
+.crm-dashboard {
+  background-color: var(--midnight-bg);
+  color: var(--midnight-text);
+}
+
+.crm-dashboard {
+  min-height: 100vh;
+}
+
+/* ========================================
+   3. HEADER
+======================================== */
+
+header,
+.header,
+.app-header,
+.main-header,
+.top-header,
+.topbar,
+.navbar {
+  background-color: var(--midnight-surface);
+  color: var(--midnight-text);
+  border-color: var(--midnight-border);
+}
+
+.header,
+.app-header,
+.main-header,
+.topbar {
+  border-bottom: 1px solid var(--midnight-border);
+}
+
+.header h1,
+.header h2,
+.header h3,
+.header span,
+.header strong,
+.header .user-name {
+  color: var(--midnight-text);
+}
+
+.header p,
+.header small,
+.header .user-role {
+  color: var(--midnight-muted);
+}
+
+/* ========================================
+   4. SIDEBAR
+======================================== */
+
+.sidebar {
+  background-color: var(--midnight-sidebar);
+  color: var(--midnight-text);
+  border-right: 1px solid var(--midnight-border);
+}
+
+.sidebar-brand {
+  border-color: var(--midnight-border);
+}
+
+.sidebar-brand h3 {
+  color: var(--midnight-accent);
+  font-weight: 700;
+}
+
+.sidebar-brand span {
+  color: var(--midnight-muted);
+}
+
+.sidebar-label {
+  color: var(--midnight-muted);
+  letter-spacing: 1.2px;
+}
+
+.sidebar nav button {
+  background-color: transparent;
+  color: #cbd5e1;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.sidebar nav button:hover {
+  background-color: #1e293b;
+  color: #ffffff;
+}
+
+.sidebar nav button.selected {
+  background-color: #1e3a5f;
+  color: #93c5fd;
+  border-color: #31547c;
+}
+
+.sidebar nav button.selected span {
+  color: #93c5fd;
+}
+
+/* ========================================
+   5. DASHBOARD HEADER
+======================================== */
+
+.overview-header h1 {
+  color: var(--midnight-text);
+}
+
+.overview-header p {
+  color: var(--midnight-muted);
+}
+
+.overview-section-title {
+  color: var(--midnight-text);
+}
+
+.overview-refresh {
+  background-color: var(--midnight-primary);
+  color: #ffffff;
+  border: 1px solid transparent;
+}
+
+.overview-refresh:hover {
+  background-color: #1d4ed8;
+}
+
+.overview-refresh:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ========================================
+   6. WELCOME SECTION
+======================================== */
+
+.overview-welcome {
+  background: linear-gradient(
+    120deg,
+    #172554,
+    #1e3a5f,
+    #164e63
+  );
+
+  border: 1px solid #31547c;
+  color: #f1f5f9;
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.overview-welcome h2 {
+  color: #f1f5f9;
+}
+
+.overview-welcome p {
+  color: #bfdbfe;
+}
+
+.overview-role {
+  background-color: rgba(96, 165, 250, 0.15);
+  border: 1px solid rgba(96, 165, 250, 0.3);
+  color: #bfdbfe;
+}
+
+/* ========================================
+   7. DASHBOARD STATISTICS CARDS
+======================================== */
+
+.overview-stat-card {
+  background-color: var(--midnight-surface);
+  border: 1px solid var(--midnight-border);
+  color: var(--midnight-text);
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.overview-clickable:hover {
+  background-color: var(--midnight-hover);
+  border-color: var(--midnight-accent);
+
+  transform: translateY(-3px);
+
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.overview-stat-content p {
+  color: var(--midnight-muted);
+}
+
+.overview-stat-content h2 {
+  color: var(--midnight-text);
+}
+
+.overview-clickable:focus-visible {
+  outline: 2px solid var(--midnight-accent);
+  outline-offset: 3px;
+}
+
+/* ========================================
+   8. DASHBOARD ICONS
+======================================== */
+
+.overview-icon.blue {
+  color: #60a5fa;
+  background-color: #1e3a5f;
+}
+
+.overview-icon.purple {
+  color: #c084fc;
+  background-color: #3b2859;
+}
+
+.overview-icon.green {
+  color: #4ade80;
+  background-color: #163e35;
+}
+
+.overview-icon.cyan {
+  color: #22d3ee;
+  background-color: #164450;
+}
+
+.overview-icon.orange {
+  color: #fb923c;
+  background-color: #4b3422;
+}
+
+.overview-icon.red {
+  color: #f87171;
+  background-color: #4b2732;
+}
+
+/* ========================================
+   9. DASHBOARD PANELS
+======================================== */
+
+.overview-panel {
+  background-color: var(--midnight-surface);
+  border-color: var(--midnight-border);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.overview-panel-heading {
+  color: var(--midnight-accent);
+}
+
+.overview-panel-heading h2,
+.overview-stage-label strong,
+.overview-stage-value {
+  color: var(--midnight-text);
+}
+
+.overview-panel-description,
+.overview-stage-label span {
+  color: var(--midnight-muted);
+}
+
+.overview-bar-track {
+  background-color: var(--midnight-border);
+}
+
+.overview-last-updated {
+  color: var(--midnight-muted);
+}
+
+/* ========================================
+   10. CRM PAGE
+======================================== */
+
+.crm-page {
+  color: var(--midnight-text);
+}
+
+.crm-page h1,
+.crm-page h2,
+.crm-page h3,
+.crm-page h4 {
+  color: var(--midnight-text);
+}
+
+.crm-page p {
+  color: var(--midnight-muted);
+}
+
+.crm-header,
+.crm-toolbar,
+.crm-content,
+.page-header,
+.page-toolbar {
+  background-color: var(--midnight-bg);
+  color: var(--midnight-text);
+  border-color: var(--midnight-border);
+}
+
+/* ========================================
+   11. CARDS AND LIST VIEW
+======================================== */
+
+.card,
+.crm-card,
+.record-card,
+.list-card,
+.list-group-item,
+.table-container,
+.crm-table-container {
+  background-color: var(--midnight-surface);
+  color: var(--midnight-text);
+  border-color: var(--midnight-border);
+}
+
+.card-header,
+.card-footer {
+  background-color: #182235;
+  color: var(--midnight-text);
+  border-color: var(--midnight-border);
+}
+
+.card-body,
+.card-title,
+.card-text {
+  color: var(--midnight-text);
+}
+
+.card-subtitle {
+  color: var(--midnight-muted);
+}
+
+.record-card:hover,
+.crm-card:hover,
+.list-group-item-action:hover {
+  background-color: var(--midnight-hover);
+  border-color: #475569;
+}
+
+/* ========================================
+   12. CRM TABLES
+======================================== */
+
+.table {
+  --bs-table-color: #e2e8f0;
+  --bs-table-bg: #1f2937;
+  --bs-table-border-color: #334155;
+
+  --bs-table-striped-color: #e2e8f0;
+  --bs-table-striped-bg: #182235;
+
+  --bs-table-hover-color: #ffffff;
+  --bs-table-hover-bg: #273449;
+
+  --bs-table-active-color: #ffffff;
+  --bs-table-active-bg: #1e3a5f;
+
+  color: var(--midnight-text);
+  border-color: var(--midnight-border);
+}
+
+.dashboard-main .table-responsive {
+  background-color: var(--midnight-surface);
+  border-radius: 8px;
+}
+
+.dashboard-main
+table:not(.overview-activity-table) {
+  background-color: var(--midnight-surface);
+  color: var(--midnight-text);
+}
+
+/* Table header */
+
+.dashboard-main
+table:not(.overview-activity-table) th {
+  background-color: #172033;
+  color: #cbd5e1;
+  border-bottom: 1px solid var(--midnight-border);
+}
+
+/* Table cells */
+
+.dashboard-main
+table:not(.overview-activity-table) td {
+  background-color: transparent;
+  color: #e2e8f0;
+  border-bottom: 1px solid var(--midnight-border);
+}
+
+/* Alternating rows */
+
+.dashboard-main
+table:not(.overview-activity-table)
+tbody tr:nth-child(odd) {
+  background-color: var(--midnight-surface);
+}
+
+.dashboard-main
+table:not(.overview-activity-table)
+tbody tr:nth-child(even) {
+  background-color: #182235;
+}
+
+/* Hover effect */
+
+.dashboard-main
+table:not(.overview-activity-table)
+tbody tr:hover {
+  background-color: var(--midnight-hover);
+}
+
+.dashboard-main
+table:not(.overview-activity-table)
+tbody tr:hover td {
+  color: #ffffff;
+}
+
+/* ========================================
+   13. EDIT AND DELETE ACTION ICONS
+======================================== */
+
+.table-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.dashboard-main
+table:not(.overview-activity-table)
+td .action-icon {
+  width: 32px !important;
+  height: 32px;
+  min-height: 32px;
+  padding: 0 !important;
+  margin: 0;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+/* Edit icon */
+
+.table-actions .edit-icon {
+  background-color: #1e3a5f;
+  color: #60a5fa;
+  border: 1px solid #31547c;
+}
+
+.table-actions .edit-icon:hover {
+  background-color: #2563eb;
+  color: #ffffff;
+  border-color: #60a5fa;
+}
+
+/* Delete icon */
+
+.table-actions .delete-icon {
+  background-color: #4b2732;
+  color: #f87171;
+  border: 1px solid #713744;
+}
+
+.table-actions .delete-icon:hover {
+  background-color: #b91c1c;
+  color: #ffffff;
+  border-color: #f87171;
+}
+
+.table-actions .action-icon:focus-visible {
+  outline: 2px solid var(--midnight-accent);
+  outline-offset: 2px;
+}
+
+/* ========================================
+   14. INPUTS AND SEARCH BARS
+======================================== */
+
+input:not([type="checkbox"]):not([type="radio"]),
+select,
+textarea,
+.form-control,
+.form-select,
+.search-input {
+  background-color: #111827;
+  color: var(--midnight-text);
+  border-color: var(--midnight-border);
+}
+
+input::placeholder,
+textarea::placeholder,
+.form-control::placeholder {
+  color: var(--midnight-muted);
+  opacity: 1;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+.form-control:focus,
+.form-select:focus {
+  background-color: #111827;
+  color: var(--midnight-text);
+  border-color: var(--midnight-accent);
+  outline: none;
+
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.15);
+}
+
+input:disabled,
+select:disabled,
+textarea:disabled,
+.form-control:disabled,
+.form-select:disabled {
+  background-color: #273449;
+  color: var(--midnight-muted);
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+select option {
+  background-color: var(--midnight-surface);
+  color: var(--midnight-text);
+}
+
+.form-select {
+  --bs-form-select-bg-img: url(
+    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%2394a3b8' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3E%3C/svg%3E"
+  );
+}
+
+.input-group-text {
+  background-color: var(--midnight-surface);
+  color: var(--midnight-muted);
+  border-color: var(--midnight-border);
+}
+
+/* ========================================
+   15. FORM LABELS
+======================================== */
+
+label,
+.form-label,
+.form-group label {
+  color: #cbd5e1;
+}
+
+.form-text {
+  color: var(--midnight-muted);
+}
+
+.form-group small {
+  color: var(--midnight-muted);
+}
+
+.form-check-input {
+  background-color: #111827;
+  border-color: #64748b;
+}
+
+.form-check-input:checked {
+  background-color: var(--midnight-primary);
+  border-color: var(--midnight-primary);
+}
+
+/* ========================================
+   16. PRIMARY BUTTONS
+======================================== */
+
+.btn-primary {
+  --bs-btn-color: #ffffff;
+  --bs-btn-bg: #2563eb;
+  --bs-btn-border-color: #2563eb;
+
+  --bs-btn-hover-color: #ffffff;
+  --bs-btn-hover-bg: #1d4ed8;
+  --bs-btn-hover-border-color: #1d4ed8;
+
+  --bs-btn-active-color: #ffffff;
+  --bs-btn-active-bg: #1e40af;
+  --bs-btn-active-border-color: #1e40af;
+
+  --bs-btn-disabled-color: #ffffff;
+  --bs-btn-disabled-bg: #1e3a5f;
+  --bs-btn-disabled-border-color: #31547c;
+}
+
+/* Secondary buttons */
+
+.btn-secondary,
+.btn-light {
+  --bs-btn-color: #e2e8f0;
+  --bs-btn-bg: #334155;
+  --bs-btn-border-color: #475569;
+
+  --bs-btn-hover-color: #ffffff;
+  --bs-btn-hover-bg: #475569;
+  --bs-btn-hover-border-color: #64748b;
+
+  --bs-btn-active-color: #ffffff;
+  --bs-btn-active-bg: #475569;
+  --bs-btn-active-border-color: #64748b;
+}
+
+/* Outline primary */
+
+.btn-outline-primary {
+  --bs-btn-color: #60a5fa;
+  --bs-btn-border-color: #31547c;
+
+  --bs-btn-hover-color: #ffffff;
+  --bs-btn-hover-bg: #2563eb;
+  --bs-btn-hover-border-color: #2563eb;
+
+  --bs-btn-active-color: #ffffff;
+  --bs-btn-active-bg: #1d4ed8;
+  --bs-btn-active-border-color: #2563eb;
+}
+
+/* Outline secondary */
+
+.btn-outline-secondary,
+.btn-outline-dark {
+  --bs-btn-color: #cbd5e1;
+  --bs-btn-border-color: #475569;
+
+  --bs-btn-hover-color: #ffffff;
+  --bs-btn-hover-bg: #334155;
+  --bs-btn-hover-border-color: #64748b;
+
+  --bs-btn-active-color: #ffffff;
+  --bs-btn-active-bg: #334155;
+  --bs-btn-active-border-color: #64748b;
+}
+
+/* Danger buttons */
+
+.btn-danger {
+  --bs-btn-color: #ffffff;
+  --bs-btn-bg: #b91c1c;
+  --bs-btn-border-color: #b91c1c;
+
+  --bs-btn-hover-color: #ffffff;
+  --bs-btn-hover-bg: #991b1b;
+  --bs-btn-hover-border-color: #991b1b;
+}
+
+.btn-outline-danger {
+  --bs-btn-color: #f87171;
+  --bs-btn-border-color: #713744;
+
+  --bs-btn-hover-color: #ffffff;
+  --bs-btn-hover-bg: #b91c1c;
+  --bs-btn-hover-border-color: #b91c1c;
+}
+
+/* ========================================
+   17. MODAL WINDOWS
+======================================== */
+
+.modal {
+  --bs-modal-bg: #1f2937;
+  --bs-modal-color: #f1f5f9;
+  --bs-modal-border-color: #334155;
+  --bs-modal-header-border-color: #334155;
+  --bs-modal-footer-border-color: #334155;
+}
+
+.modal-content {
+  background-color: var(--midnight-surface);
+  color: var(--midnight-text);
+  border: 1px solid var(--midnight-border);
+  border-radius: 12px;
+
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.4);
+}
+
+.modal-header,
+.modal-footer {
+  background-color: #182235;
+  border-color: var(--midnight-border);
+}
+
+.modal-title {
+  color: var(--midnight-text);
+}
+
+.modal-body {
+  background-color: var(--midnight-surface);
+  color: var(--midnight-text);
+}
+
+.modal-backdrop.show {
+  opacity: 0.75;
+}
+
+.btn-close {
+  filter: invert(1) grayscale(100%) brightness(180%);
+}
+
+.form-actions {
+  border-color: var(--midnight-border);
+}
+
+/* ========================================
+   18. DROPDOWN MENUS
+======================================== */
+
+.dropdown-menu {
+  --bs-dropdown-bg: #1f2937;
+  --bs-dropdown-color: #f1f5f9;
+  --bs-dropdown-border-color: #334155;
+  --bs-dropdown-link-color: #e2e8f0;
+  --bs-dropdown-link-hover-color: #ffffff;
+  --bs-dropdown-link-hover-bg: #334155;
+  --bs-dropdown-link-active-color: #ffffff;
+  --bs-dropdown-link-active-bg: #2563eb;
+
+  background-color: var(--midnight-surface);
+  border-color: var(--midnight-border);
+  color: var(--midnight-text);
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+.dropdown-item {
+  color: var(--midnight-text);
+}
+
+.dropdown-item:hover {
+  background-color: var(--midnight-hover);
+  color: #ffffff;
+}
+
+.dropdown-divider {
+  border-color: var(--midnight-border);
+}
+
+/* ========================================
+   19. LOGIN PAGE
+======================================== */
+
+.login-page,
+.login-container,
+.login-wrapper,
+.auth-page,
+.auth-container {
+  background-color: var(--midnight-bg);
+  color: var(--midnight-text);
+}
+
+.login-page,
+.auth-page {
+  background-image: radial-gradient(
+    ellipse at top right,
+    #172554,
+    #111827 55%,
+    #0b1120
+  );
+}
+
+.login-card,
+.auth-card,
+.login-box,
+.login-form {
+  background-color: var(--midnight-surface);
+  color: var(--midnight-text);
+  border-color: var(--midnight-border);
+}
+
+.login-card,
+.auth-card,
+.login-box {
+  border: 1px solid var(--midnight-border);
+  border-radius: 12px;
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.login-card h1,
+.login-card h2,
+.login-card h3,
+.auth-card h1,
+.auth-card h2 {
+  color: var(--midnight-text);
+}
+
+.login-card p,
+.auth-card p {
+  color: var(--midnight-muted);
+}
+
+/* ========================================
+   20. STATUS BADGES
+======================================== */
+
+.badge.bg-success,
+.badge.text-bg-success {
+  background-color: #163e35 !important;
+  color: #4ade80 !important;
+}
+
+.badge.bg-danger,
+.badge.text-bg-danger {
+  background-color: #4b2732 !important;
+  color: #f87171 !important;
+}
+
+.badge.bg-warning,
+.badge.text-bg-warning {
+  background-color: #4b3422 !important;
+  color: #fbbf24 !important;
+}
+
+.badge.bg-primary,
+.badge.text-bg-primary {
+  background-color: #1e3a5f !important;
+  color: #93c5fd !important;
+}
+
+.badge.bg-info,
+.badge.text-bg-info {
+  background-color: #164450 !important;
+  color: #22d3ee !important;
+}
+
+.badge.bg-secondary,
+.badge.text-bg-secondary {
+  background-color: #334155 !important;
+  color: #cbd5e1 !important;
+}
+
+/* ========================================
+   21. LOADING AND ERROR STATES
+======================================== */
+
+.overview-message,
+.empty-state,
+.loading-state {
+  background-color: var(--midnight-surface);
+  color: var(--midnight-muted);
+  border-color: var(--midnight-border);
+}
+
+.overview-error,
+.alert-danger {
+  background-color: #3f1d2a;
+  color: #fca5a5;
+  border-color: #713744;
+}
+
+.alert-success {
+  background-color: #163e35;
+  color: #86efac;
+  border-color: #166534;
+}
+
+.alert-warning {
+  background-color: #4b3422;
+  color: #fcd34d;
+  border-color: #854d0e;
+}
+
+.alert-info {
+  background-color: #1e3a5f;
+  color: #93c5fd;
+  border-color: #31547c;
+}
+
+/* ========================================
+   22. PAGINATION
+======================================== */
+
+.pagination {
+  --bs-pagination-color: #cbd5e1;
+  --bs-pagination-bg: #1f2937;
+  --bs-pagination-border-color: #334155;
+
+  --bs-pagination-hover-color: #ffffff;
+  --bs-pagination-hover-bg: #334155;
+  --bs-pagination-hover-border-color: #475569;
+
+  --bs-pagination-active-color: #ffffff;
+  --bs-pagination-active-bg: #2563eb;
+  --bs-pagination-active-border-color: #2563eb;
+
+  --bs-pagination-disabled-color: #64748b;
+  --bs-pagination-disabled-bg: #111827;
+  --bs-pagination-disabled-border-color: #334155;
+}
+
+/* ========================================
+   23. SCROLLBAR
+======================================== */
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #475569 #111827;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #111827;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #475569;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #64748b;
+}
+
+/* ========================================
+   24. TEXT SELECTION AND KEYBOARD FOCUS
+======================================== */
+
+::selection {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--midnight-accent);
+  outline-offset: 3px;
+}
+
+/* ========================================
+   25. RESPONSIVE THEME
+======================================== */
+
+@media (max-width: 768px) {
+
+  .overview-welcome {
+    border-radius: 8px;
+  }
+
+  .overview-stat-card {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  .modal-content {
+    border-radius: 8px;
+  }
+
+  .table-actions {
+    gap: 5px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .overview-clickable,
+  .action-icon,
+  .sidebar nav button {
+    transition: none;
+  }
+
+  .overview-clickable:hover {
+    transform: none;
+  }
+}
+
+/* ========================================
+   MIDNIGHT DARK - FINAL LAYOUT FIX
+======================================== */
+
+:root {
+  --page-bg: #111827;
+  --card-bg: #1f2937;
+  --sidebar-bg: #0b1120;
+  --border-color: #334155;
+  --text-color: #f1f5f9;
+  --muted-color: #94a3b8;
+  --accent-color: #60a5fa;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--page-bg);
+  color: var(--text-color);
+}
+
+/* ========================================
+   1. DASHBOARD LAYOUT
+======================================== */
+
+.dashboard-layout {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.dashboard-main {
+  flex: 1;
+  min-width: 0;
+  max-width: 100%;
+  background: var(--page-bg);
+}
+
+.crm-dashboard {
+  width: 100%;
+  min-height: 100vh;
+  padding: 28px;
+  background: var(--page-bg);
+}
+
+/* ========================================
+   2. DASHBOARD HEADER
+======================================== */
+
+.overview-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.overview-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0 0 8px;
+}
+
+.overview-header p {
+  font-size: 14px;
+  color: var(--muted-color);
+  margin: 0;
+}
+
+.overview-refresh {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: #1f2937;
+  color: #e2e8f0;
+  border: 1px solid #475569;
+  border-radius: 8px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.overview-refresh:hover {
+  background: #334155;
+  border-color: #60a5fa;
+}
+
+/* ========================================
+   3. WELCOME BANNER
+======================================== */
+
+.overview-welcome {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 28px;
+  margin-bottom: 28px;
+
+  background: linear-gradient(
+    120deg,
+    #172554,
+    #1e3a5f
+  );
+
+  border: 1px solid #31547c;
+  border-radius: 12px;
+}
+
+.overview-welcome h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0 0 8px;
+  color: #f1f5f9;
+}
+
+.overview-welcome p {
+  font-size: 14px;
+  margin: 0;
+  color: #bfdbfe;
+}
+
+.overview-role {
+  display: inline-flex;
+  padding: 8px 14px;
+  background: #ffffff12;
+  border: 1px solid #ffffff20;
+  border-radius: 20px;
+  font-size: 12px;
+  color: #bfdbfe;
+}
+
+/* ========================================
+   4. DASHBOARD SUMMARY CARDS
+======================================== */
+
+.overview-section-title {
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--text-color);
+  margin: 24px 0 18px;
+}
+
+.overview-card-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  width: 100%;
+}
+
+.overview-stat-card {
+  display: flex !important;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+
+  width: 100%;
+  min-width: 0;
+  min-height: 115px;
+  padding: 22px;
+
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+
+  text-align: left;
+  cursor: pointer;
+
+  box-shadow: 0 4px 12px #00000015;
+  transition: all 0.2s ease;
+}
+
+.overview-stat-card:hover {
+  background: #263449;
+  border-color: var(--accent-color);
+  transform: translateY(-3px);
+}
+
+.overview-icon {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+
+  flex-shrink: 0;
+  border-radius: 10px;
+}
+
+.overview-icon.blue {
+  background: #1e3a5f;
+  color: #60a5fa;
+}
+
+.overview-icon.purple {
+  background: #3b2859;
+  color: #c084fc;
+}
+
+.overview-icon.green {
+  background: #163e35;
+  color: #4ade80;
+}
+
+.overview-icon.cyan {
+  background: #164450;
+  color: #22d3ee;
+}
+
+.overview-icon.orange {
+  background: #4b3422;
+  color: #fb923c;
+}
+
+.overview-icon.red {
+  background: #4b2732;
+  color: #f87171;
+}
+
+.overview-stat-content {
+  min-width: 0;
+}
+
+.overview-stat-content p {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted-color);
+  margin: 0 0 8px;
+}
+
+.overview-stat-content h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.overview-last-updated {
+  margin-top: 22px;
+  text-align: right;
+  font-size: 12px;
+  color: var(--muted-color);
+}
+
+/* ========================================
+   5. CRM PAGE
+======================================== */
+
+.crm-content {
+  width: 100%;
+  min-width: 0;
+  padding: 26px;
+  background: var(--page-bg);
+  color: var(--text-color);
+}
+
+.crm-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 24px;
+}
+
+.crm-heading h2 {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0 0 8px;
+}
+
+.crm-heading p {
+  font-size: 14px;
+  color: var(--muted-color);
+  margin: 0;
+}
+
+/* ========================================
+   6. SEARCH AND TOOLBAR
+======================================== */
+
+.crm-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.crm-toolbar .search-input {
+  width: 100%;
+  max-width: 420px;
+  height: 42px;
+
+  background: #172033;
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 10px 14px;
+}
+
+.crm-toolbar .search-input::placeholder {
+  color: var(--muted-color);
+}
+
+/* ========================================
+   7. TABLE / LIST / CARD SWITCHER
+======================================== */
+
+.crm-toolbar .view-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+
+  background: #1f2937 !important;
+  border: 1px solid #334155;
+  border-radius: 8px;
+}
+
+.view-switcher button {
+  padding: 8px 16px;
+  background: transparent !important;
+  color: #94a3b8 !important;
+
+  border: none;
+  border-radius: 5px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.view-switcher button:hover {
+  background: #334155 !important;
+  color: #f1f5f9 !important;
+}
+
+.view-switcher button.active {
+  background: #1e3a5f !important;
+  color: #93c5fd !important;
+  font-weight: 600;
+}
+
+/* ========================================
+   8. COMPACT TABLE LAYOUT
+======================================== */
+
+.dashboard-main .table-responsive {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  overflow-x: auto !important;
+
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+}
+
+.dashboard-main
+table:not(.overview-activity-table) {
+  width: 100%;
+  min-width: 0;
+  table-layout: auto;
+  border-collapse: collapse;
+  margin: 0;
+
+  background: var(--card-bg);
+}
+
+.dashboard-main
+table:not(.overview-activity-table) th {
+  background: #172033 !important;
+  color: #cbd5e1 !important;
+
+  padding: 12px 10px !important;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+
+  text-align: left;
+  vertical-align: middle;
+  border-bottom: 1px solid #334155;
+}
+
+.dashboard-main
+table:not(.overview-activity-table) td {
+  padding: 12px 10px !important;
+
+  height: auto !important;
+  min-height: 0 !important;
+
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+
+  vertical-align: middle;
+  color: #e2e8f0 !important;
+
+  white-space: normal;
+  overflow-wrap: anywhere;
+
+  background: transparent;
+  border-bottom: 1px solid #334155;
+}
+
+.dashboard-main
+table:not(.overview-activity-table) tr {
+  height: auto !important;
+  min-height: 0 !important;
+}
+
+.dashboard-main
+table:not(.overview-activity-table)
+tbody tr:nth-child(odd) {
+  background: #1f2937 !important;
+}
+
+.dashboard-main
+table:not(.overview-activity-table)
+tbody tr:nth-child(even) {
+  background: #1b2535 !important;
+}
+
+.dashboard-main
+table:not(.overview-activity-table)
+tbody tr:hover {
+  background: #29384e !important;
+}
+
+/* ========================================
+   9. ACTION COLUMN FIX
+======================================== */
+
+.dashboard-main
+table:not(.overview-activity-table) th:last-child,
+
+.dashboard-main
+table:not(.overview-activity-table) td:last-child {
+  width: 96px !important;
+  min-width: 96px !important;
+  white-space: nowrap !important;
+  text-align: center;
+}
+
+.table-actions {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.dashboard-main
+table:not(.overview-activity-table)
+td .action-icon {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 30px;
+
+  width: 30px !important;
+  min-width: 30px !important;
+  height: 30px !important;
+  min-height: 30px !important;
+
+  padding: 0 !important;
+  margin: 0 !important;
+
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.table-actions .edit-icon {
+  background: #1e3a5f !important;
+  color: #60a5fa !important;
+  border: 1px solid #31547c;
+}
+
+.table-actions .delete-icon {
+  background: #4b2732 !important;
+  color: #f87171 !important;
+  border: 1px solid #713744;
+}
+
+.table-actions .edit-icon:hover {
+  background: #2563eb !important;
+  color: white !important;
+}
+
+.table-actions .delete-icon:hover {
+  background: #b91c1c !important;
+  color: white !important;
+}
+
+/* ========================================
+   10. LIST VIEW FIX
+======================================== */
+
+.crm-content .record-list {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  background: #1f2937 !important;
+
+  border: 1px solid #334155;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.crm-content .record-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  padding: 18px 20px;
+
+  background: #1f2937 !important;
+  color: #f1f5f9 !important;
+
+  border-bottom: 1px solid #334155;
+}
+
+.record-list-item > div:first-child {
+  flex: 1;
+  min-width: 0;
+}
+
+.record-list-item:last-child {
+  border-bottom: none;
+}
+
+.crm-content .record-list-item:hover {
+  background: #273449 !important;
+}
+
+.crm-content .record-list-item strong {
+  color: #f1f5f9 !important;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.crm-content .record-list-item p {
+  color: #94a3b8 !important;
+  font-size: 13px;
+  margin: 6px 0 0;
+  overflow-wrap: anywhere;
+}
+
+/* ========================================
+   11. CARD VIEW FIX
+======================================== */
+
+.record-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  width: 100%;
+}
+
+.crm-content .record-card {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+  padding: 22px;
+
+  background: #1f2937 !important;
+  color: #f1f5f9 !important;
+
+  border: 1px solid #334155;
+  border-radius: 10px;
+
+  box-shadow: 0 4px 12px #00000015;
+  transition: all 0.2s ease;
+}
+
+.crm-content .record-card:hover {
+  background: #273449 !important;
+  border-color: #475569;
+}
+
+.record-card h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #f1f5f9 !important;
+  margin: 0 0 16px;
+}
+
+.record-card p {
+  font-size: 13px;
+  color: #94a3b8 !important;
+  line-height: 1.6;
+  margin: 0 0 8px;
+  overflow-wrap: anywhere;
+}
+
+.record-card p strong {
+  color: #cbd5e1 !important;
+}
+
+.record-card .table-actions {
+  justify-content: flex-end;
+  margin-top: auto;
+  padding-top: 16px;
+}
+
+/* ========================================
+   12. LIST AND CARD ACTION BUTTONS
+======================================== */
+
+.record-list-item .btn-outline-primary,
+.record-card .btn-outline-primary {
+  background: #1e3a5f !important;
+  color: #93c5fd !important;
+  border: 1px solid #31547c !important;
+
+  padding: 7px 14px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+.record-list-item .btn-outline-danger,
+.record-card .btn-outline-danger {
+  background: #4b2732 !important;
+  color: #f87171 !important;
+  border: 1px solid #713744 !important;
+
+  padding: 7px 14px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+.record-list-item .btn-outline-primary:hover,
+.record-card .btn-outline-primary:hover {
+  background: #2563eb !important;
+  color: white !important;
+}
+
+.record-list-item .btn-outline-danger:hover,
+.record-card .btn-outline-danger:hover {
+  background: #b91c1c !important;
+  color: white !important;
+}
+
+/* ========================================
+   13. RECORD COUNT
+======================================== */
+
+.record-count {
+  color: #94a3b8 !important;
+  font-size: 12px;
+  text-align: right;
+  margin-top: 16px;
+}
+
+/* ========================================
+   14. SIDEBAR
+======================================== */
+
+.sidebar {
+  flex-shrink: 0;
+  background: #0b1120 !important;
+  border-right: 1px solid #334155;
+}
+
+.sidebar nav button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 5px;
+
+  background: transparent;
+  color: #cbd5e1;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  font-size: 14px;
+}
+
+.sidebar nav button:hover {
+  background: #1e293b;
+}
+
+.sidebar nav button.selected {
+  background: #1e3a5f;
+  color: #93c5fd;
+  border-color: #31547c;
+}
+
+/* ========================================
+   15. RESPONSIVE DESIGN
+======================================== */
+
+@media (max-width: 1200px) {
+
+  .overview-stat-card {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .dashboard-main
+  table:not(.overview-activity-table) th,
+
+  .dashboard-main
+  table:not(.overview-activity-table) td {
+    padding: 10px 7px !important;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 992px) {
+
+  .overview-card-grid,
+  .record-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .crm-dashboard,
+  .crm-content {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+
+  .overview-card-grid,
+  .record-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .crm-dashboard,
+  .crm-content {
+    padding: 14px;
+  }
+
+  .overview-welcome {
+    padding: 20px;
+  }
+
+  .overview-header h1 {
+    font-size: 23px;
+  }
+
+  .overview-stat-card {
+    min-height: 90px;
+  }
+
+  .crm-toolbar {
+    align-items: stretch;
+  }
+
+  .crm-toolbar .search-input {
+    max-width: 100%;
+  }
+
+  .record-list-item {
+    flex-wrap: wrap;
+  }
+}
